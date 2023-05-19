@@ -1,6 +1,6 @@
 # Odin Revisited
 
-An open-source application made with [Next.js](https://nextjs.org/) and other goodies to.
+An open-source application made with [Next.js](https://nextjs.org/) and other goodies.
 
 > **WARNING** 
 > While under development, this project will be hosted on [Vercel](https://vercel.com/) though I make no promises to keep it up and running. You may lose your data at any time.
