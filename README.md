@@ -1,34 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Odin Revisited
 
-## Getting Started
+An open-source application made with [Next.js](https://nextjs.org/) and other goodies to.
 
-First, run the development server:
+> **WARNING** 
+> While under development, this project will be hosted on [Vercel](https://vercel.com/) though I make no promises to keep it up and running. You may lose your data at any time.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+This is a work in progress and will be updated as I go along.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About this project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+I started [the Odin Project](https://www.theodinproject.com/) in August 2022 and completed the full course in no time.
+I've come a long way since then and I thought it could be fun to revisit some of the projects and see how I would do them now.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To the extent it makes sense to do so, I will try to follow the curriculum and do the projects in the same order as I did the first time around.
 
-## Learn More
+## Features
+- None yet
 
-To learn more about Next.js, take a look at the following resources:
+### Wishlist
+- [ ] Create proper static documentation 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [x] Setup Project
+- [ ] Redo curriculum projects
+- [ ] Create documentation for each project
 
-## Deploy on Vercel
+### Curriculum
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> This is the chronological order in which I completed the projects the first time around.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### HTML/CSS
+
+- [ ] Recipes
+- [ ] Landing Page
+- [ ] Rock Paper Scissors
+- [ ] Etch-a-Sketch
+- [ ] Calculator
+- [ ] Signup Form
+- [ ] Admin Dashboard
+
+#### Javascript
+
+- [ ] Library
+- [ ] Tic Tac Toe
+- [ ] Restaurant Page
+- [ ] Todo List
+- [ ] Weather App
+- [ ] DSA ? (maybe not)
+- [ ] Battleship
+- [ ] CV Builder
+- [ ] Memory Card Game
+- [ ] Shopping Cart
+- [ ] Where's Waldo
+- [ ] Final Project (Social Media App)
+- [x] Personal Portfolio – [*Live*](https://www.hjartlandd.dev/)
+- [ ] Basic
+
+#### Node
+
+>So many of the project in the Node curriculum so I may change some of them to be more interesting or simply mark them as done.
+
+- [x] Basic Informational Site 
+- [x] Forms and Deployment
+- [ ] Mini Message Board
+- [ ] Inventory Application
+- [ ] Members Only
+  - Already will be using some auth, so I may try to implement a testing payment plan with Stripe to tier access to some features (for fun)
+- [ ] Blog API
+- [ ] Odin Book
+
+## License
+Licensed under the [MIT License](LICENSE.md).
