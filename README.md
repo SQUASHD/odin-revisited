@@ -3,7 +3,8 @@
 An open-source application made with [Next.js](https://nextjs.org/) and other goodies.
 
 > **WARNING** 
-> While under development, this project will be hosted on [Vercel](https://vercel.com/) though I make no promises to keep it up and running. You may lose your data at any time.
+> While under development, this project will be hosted on [Vercel](https://vercel.com/) though I make no promises to keep it up and running.
+> You may lose your data at any time.
 
 This is a work in progress and will be updated as I go along.
 

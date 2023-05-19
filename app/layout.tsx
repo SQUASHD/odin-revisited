@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
+import { ToastProvider } from "@/components/ui/toast";
 
 export const metadata = {
   title: "Odin Revisited",
@@ -19,7 +20,7 @@ const fontHeading = localFont({
   variable: "--font-heading",
 });
 
-interface RootLayoutProps {
+export interface RootLayoutProps {
   children: React.ReactNode;
 }
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -34,6 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           {children}
+          <ToastProvider />
         </body>
       </html>
     </ClerkProvider>
