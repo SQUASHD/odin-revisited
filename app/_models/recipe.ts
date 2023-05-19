@@ -4,7 +4,8 @@ import { db } from "@/lib/db";
 
 export const recipes = pgTable("recipes", {
   id: serial("id").primaryKey(),
-  title: varchar("title", { length: 256 }),
+  name: varchar("title", { length: 256 }),
+  description: text("description"),
   thumbnailHref: text("thumbnail"), // To store the URL of the image
   userId: varchar("user_id", { length: 256 }), // To store UserId from Clerk
   content: json("content"), // For flexible content schema
