@@ -26,6 +26,10 @@ To the extent it makes sense to do so, I will try to follow the curriculum and d
 - [ ] Redo curriculum projects
 - [ ] Create documentation for each project
 
+### Change Log
+
+Read the [CHANGELOG](CHANGELOG.md) file for details.
+
 ### Curriculum
 
 > This is the chronological order in which I completed the projects the first time around.
