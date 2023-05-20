@@ -54,9 +54,16 @@ export const projectConfig: ProjectConfig = {
     },
     {
       title: "Rock Paper Scissors",
-      description: "A game of rock paper scissors.",
-      status: "TODO",
-      disabled: true,
+      description: "The classic game of rock paper scissors.",
+      status: "WIP",
+      oldLink: {
+        href: oldProjectURL + "/rock-paper-scissors",
+        label: "See live",
+      },
+      docs: {
+        href: docsURL + "/rock-paper-scissors",
+        label: "Read more",
+      },
     },
     {
       title: "Etch a Sketch",

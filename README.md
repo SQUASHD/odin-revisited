@@ -60,7 +60,6 @@ Read the [CHANGELOG](CHANGELOG.md) file for details.
 - [ ] Where's Waldo
 - [ ] Final Project (Social Media App)
 - [x] Personal Portfolio – [*Live*](https://www.hjartlandd.dev/)
-- [ ] Basic
 
 #### Node
 
