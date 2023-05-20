@@ -3,6 +3,7 @@ import { Inter as FontSans } from "next/font/google";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ToastProvider } from "@/components/ui/toast";
+import { ThemeProvider } from "@/components/ui/theme-provider";
 
 export const metadata = {
   title: "Odin Revisited",
@@ -32,8 +33,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
           fontHeading.variable
         )}
       >
-        {children}
-        <ToastProvider />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <ToastProvider />
+        </ThemeProvider>
       </body>
     </html>
   );

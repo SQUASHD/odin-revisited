@@ -8,5 +8,7 @@ export const siteConfig: SiteConfig = {
   ogImage: "",
   links: {
     github: "https://github.com/squashd/odin-revisited",
+    shadTwitter: "https://twitter.com/shadcn",
+    portfolio: "https://hjartland.dev",
   },
 };
