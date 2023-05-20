@@ -1,6 +1,5 @@
 import "@/styles/globals.css";
 import { Inter as FontSans } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
 import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 import { ToastProvider } from "@/components/ui/toast";
@@ -25,19 +24,17 @@ export interface RootLayoutProps {
 }
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <ClerkProvider>
-      <html lang="en" className="h-full">
-        <body
-          className={cn(
-            "h-full bg-background font-sans antialiased",
-            fontSans.variable,
-            fontHeading.variable
-          )}
-        >
-          {children}
-          <ToastProvider />
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" className="h-full">
+      <body
+        className={cn(
+          "h-full bg-background font-sans antialiased",
+          fontSans.variable,
+          fontHeading.variable
+        )}
+      >
+        {children}
+        <ToastProvider />
+      </body>
+    </html>
   );
 }

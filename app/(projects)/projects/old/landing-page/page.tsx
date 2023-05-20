@@ -29,7 +29,7 @@ export default function LandingPage() {
               <div className="hero-main-text">This website is awesome</div>
               <div className="hero-secondary-text">
                 This website has some subtext that goes here under the main
-                title. It's a smaller font and the color is lower contrast
+                title. It&apos;s a smaller font and the color is lower contrast
               </div>
               <div className="sign-up-button">
                 <a className="sign-up-text" href="#">
@@ -78,8 +78,8 @@ export default function LandingPage() {
         <div className="quote-container">
           <div className="quote-text">
             This is an inspiring quote, or a testimonial from a customer. Maybe
-            it's just filling up space, or maybe people will actually read it.
-            Who knows? All I know is that it looks nice.
+            it&apos;s just filling up space, or maybe people will actually read
+            it. Who knows? All I know is that it looks nice.
           </div>
           <div className="quotee">-Thor, God of Thunder</div>
         </div>
@@ -88,7 +88,7 @@ export default function LandingPage() {
         <div className="blue-call-to-action-container">
           <div className="blue-call-to-action-text">
             <div className="blue-call-to-action-text-header">
-              Call to action! It's time!
+              Call to action! It&apos;s time!
             </div>
             <div className="blue-call-to-action-text-body">
               Sign up for our product by clicking that button right over there!
