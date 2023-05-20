@@ -1,37 +1,34 @@
-import { pgTable, serial, varchar, json, text } from "drizzle-orm/pg-core";
-import { eq, InferModel } from "drizzle-orm";
-import { db } from "@/lib/db";
+import { z } from "zod";
 
-export const recipes = pgTable("recipes", {
-  id: serial("id").primaryKey(),
-  name: varchar("title", { length: 256 }),
-  description: text("description"),
-  thumbnailHref: text("thumbnail"), // To store the URL of the image
-  userId: varchar("user_id", { length: 256 }), // To store UserId from Clerk
-  content: json("content"), // For flexible content schema
+export const RecipeIngredient = z.object({
+  id: z.number(),
+  name: z.string(),
+  quantity: z.number(),
+  unit: z.string(),
 });
 
-export type Recipe = InferModel<typeof recipes>;
-export type NewRecipe = InferModel<typeof recipes, "insert">;
+export const RecipeTime = z.object({
+  label: z.string(),
+  value: z.number(),
+});
 
-export async function createRecipe(recipe: NewRecipe): Promise<Recipe> {
-  const res = await db.insert(recipes).values(recipe).returning();
-  return res[0];
-}
+export const RecipeContent = z.object({
+  time: z.array(RecipeTime),
+  ingredients: z.array(RecipeIngredient),
+  steps: z.array(z.string()),
+  servings: z.number(),
+});
 
-export async function getRecipe(id: number): Promise<Recipe | null> {
-  const res = await db
-    .select()
-    .from(recipes)
-    .where(eq(recipes.id, id))
-    .limit(1);
-  return res[0] ?? null;
-}
-
-export async function getRecipes(): Promise<Recipe[]> {
-  return db.select().from(recipes);
-}
-
-export async function deleteRecipe(id: number): Promise<void> {
-  await db.delete(recipes).where(eq(recipes.id, id));
-}
+export const FormattedRecipe = z.object({
+  id: z.number(),
+  name: z.string(),
+  thumbnail: z.object({
+    id: z.number(),
+    href: z.string(),
+  }),
+  description: z.string(),
+  content: RecipeContent,
+  userId: z.string(),
+  createdAt: z.date(),
+  updatedAt: z.date(),
+});
