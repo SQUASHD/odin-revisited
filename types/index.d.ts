@@ -4,6 +4,26 @@ export type NavItem = {
   disabled?: boolean;
 };
 
+type LiveLink = {
+  href: string;
+  label: "See live";
+};
+
+export type ProjectStatus = "DONE" | "WIP" | "TODO";
+
+export type ProjectNavItem = {
+  title: string;
+  description: string;
+  status: ProjectStatus;
+  newLink?: LiveLink;
+  oldLink?: LiveLink;
+  docs?: {
+    href: string;
+    label: "Read more";
+  };
+  disabled?: boolean;
+};
+
 export type MainNavItem = NavItem;
 
 export type SidebarNavItem = {
@@ -28,7 +48,8 @@ export type SiteConfig = {
   url: string;
   ogImage: string;
   links: {
-    twitter?: string;
+    portfolio?: string;
+    shadTwitter?: string;
     github: string;
   };
 };
@@ -45,4 +66,8 @@ export type MarketingConfig = {
 export type DashboardConfig = {
   mainNav: MainNavItem[];
   sidebarNav: SidebarNavItem[];
+};
+
+export type ProjectConfig = {
+  projectLinks: ProjectNavItem[];
 };

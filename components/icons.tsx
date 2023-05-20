@@ -23,6 +23,8 @@ import {
   X,
   Home,
   Clock,
+  BookOpen,
+  Link,
   type Icon as LucideIcon,
 } from "lucide-react";
 import { GitHub, SiteLogo } from "@/assets/icons";
@@ -30,6 +32,7 @@ import { GitHub, SiteLogo } from "@/assets/icons";
 export type Icon = LucideIcon;
 
 export const Icons = {
+  book: BookOpen,
   logo: SiteLogo,
   close: X,
   spinner: Loader2,
@@ -56,4 +59,5 @@ export const Icons = {
   check: Check,
   home: Home,
   clock: Clock,
+  link: Link,
 };
