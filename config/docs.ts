@@ -49,6 +49,10 @@ export const docsConfig: DocsConfig = {
           title: "Landing Page",
           href: "/docs/projects/landing-page",
         },
+        {
+          title: "Rock Paper Scissors",
+          href: "/docs/projects/rock-paper-scissors",
+        },
       ],
     },
   ],
