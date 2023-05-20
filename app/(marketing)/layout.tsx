@@ -11,7 +11,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <MainNav items={marketingConfig.mainNav} />
         </div>
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="flex flex-1 items-center justify-center">
+        {children}
+      </main>
       <SiteFooter />
     </div>
   );
