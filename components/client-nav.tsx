@@ -3,13 +3,16 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { MainNavItem } from "@/types";
-import { useSelectedLayoutSegment } from "next/navigation";
+import {
+  useSelectedLayoutSegment,
+  useSelectedLayoutSegments,
+} from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { useLockBody } from "@/hooks/use-lock-body";
 import { useState } from "react";
 
-type RootBreadCrumbProps = {
+type BreadCrumbProps = {
   rootName: string;
   rootHref: string;
   className?: string;
@@ -18,11 +21,11 @@ export const RootBreadCrumb = ({
   rootName,
   rootHref,
   className,
-}: RootBreadCrumbProps) => {
+}: BreadCrumbProps) => {
   return (
     <nav className={cn("flex items-center gap-2", className)}>
       <Link href={"/"}>
-        <Icons.home className="h-4 text-zinc-500" />
+        <Icons.home className="h-4" />
         <span className="sr-only">Home</span>
       </Link>
       <span>/</span>
@@ -32,6 +35,48 @@ export const RootBreadCrumb = ({
     </nav>
   );
 };
+
+export default function DynamicBreadCrumb({
+  rootHref,
+  rootName,
+  className,
+}: BreadCrumbProps) {
+  const segments = useSelectedLayoutSegments();
+
+  const compoundedSegments = segments.map((segment, index) => {
+    return decodeURI(segments.slice(0, index + 1).join("/"));
+  });
+
+  return (
+    <ul
+      className={cn("flex flex-wrap items-center gap-1 uppercase", className)}
+    >
+      <li>
+        <Link href={"/"}>
+          <Icons.home className="h-4" />
+          <span className="sr-only">Home</span>
+        </Link>
+      </li>
+      <span>/</span>
+      <li>
+        <Link href={rootHref}>
+          <span>{rootName}</span>
+        </Link>
+      </li>
+      {segments.map((segment, index) => (
+        <li key={index} className="before:mx-1 before:content-['/']">
+          {index < segments.length - 1 ? (
+            <Link href={`${compoundedSegments[index]}`} className="">
+              {decodeURI(segment).replace("-", " ")}
+            </Link>
+          ) : (
+            <span>{decodeURI(segment).replace("-", " ")}</span>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 interface MainNavProps {
   items?: MainNavItem[];
