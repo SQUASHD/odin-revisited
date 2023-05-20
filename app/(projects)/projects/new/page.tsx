@@ -12,8 +12,9 @@ export default function ProjectsPage() {
             New Projects
           </h1>
           <p className="max-w-3xl py-4 leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Here you can find links to see all the projects that I have redone
-            so far.
+            All the projects that I&apos;ve redone so far. I&apos;m aiming to
+            fulfill the objective of the original assignments before considering
+            what more I may want to add.
           </p>
           <div className="flex gap-2">
             <Button>
