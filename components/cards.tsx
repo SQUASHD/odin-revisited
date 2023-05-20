@@ -27,30 +27,26 @@ export const ProjectCard = ({ type, project }: Cards) => (
       <p>{project.description}</p>
     </CardContent>
     <CardFooter>
-      {type === "docs" && project.docs && (
-        <Button className="w-full" disabled={project.status !== "DONE"}>
-          <Link href={project.docs.href} className="flex items-center gap-1">
-            <Icons.book className="h-6 w-6" />
-            {project.docs.label}
-          </Link>
-        </Button>
-      )}
-      {type === "new" && project.newLink && (
-        <Button className="w-full">
-          <Link href={project.newLink.href} className="flex items-center gap-1">
-            <Icons.link className="h-6 w-6" />
-            {project.newLink.label}
-          </Link>
-        </Button>
-      )}
-      {type === "old" && project.oldLink && (
-        <Button className="w-full" size="sm">
+      <Button variant="link" className="w-full" size="sm">
+        {type === "old" && project.oldLink && (
           <Link href={project.oldLink.href} className="flex items-center gap-1">
-            <Icons.link className="h-6 w-6" />
+            <Icons.link className="h-4 w-4" />
             {project.oldLink.label}
           </Link>
-        </Button>
-      )}
+        )}
+        {type === "new" && project.newLink && (
+          <Link href={project.newLink.href} className="flex items-center gap-1">
+            <Icons.link className="h-4 w-4" />
+            {project.newLink.label}
+          </Link>
+        )}
+        {type === "docs" && project.docs && (
+          <Link href={project.docs.href} className="flex items-center gap-1">
+            <Icons.book className="h-4 w-4" />
+            {project.docs.label}
+          </Link>
+        )}
+      </Button>
     </CardFooter>
   </Card>
 );
