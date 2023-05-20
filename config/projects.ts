@@ -10,7 +10,7 @@ export const projectConfig: ProjectConfig = {
   mainNav: [
     {
       title: "Docs",
-      href: "/docs/projects",
+      href: "/projects",
     },
     {
       title: "Old",
