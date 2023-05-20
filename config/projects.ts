@@ -47,6 +47,10 @@ export const projectConfig: ProjectConfig = {
         href: oldProjectURL + "/landing-page",
         label: "See live",
       },
+      newLink: {
+        href: newProjectURL + "/landing-page",
+        label: "See live",
+      },
       docs: {
         href: docsURL + "/landing-page",
         label: "Read more",
