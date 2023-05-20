@@ -12,34 +12,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
         <div className="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
           <Icons.logo />
           <p className="text-center text-sm leading-loose md:text-left">
-            Built by{" "}
-            <a
-              href={siteConfig.links.portfolio}
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              hjartland
-            </a>
-            , based on{" "}
-            <a
-              href="https://tx.shadcn.com"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              Taxonomy
-            </a>{" "}
-            by{" "}
-            <a
-              href={siteConfig.links.shadTwitter}
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              shadcn
-            </a>
-            .The source code is available on{" "}
+            The source code is available on{" "}
             <a
               href={siteConfig.links.github}
               target="_blank"

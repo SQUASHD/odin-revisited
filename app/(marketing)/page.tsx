@@ -14,16 +14,6 @@ export default function Home() {
             start to finish, and I&apos;m going to be documenting the process
             here.
           </p>
-          <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Drawing a lot of inspiration from{" "}
-            <Link
-              href="https://github.com/shadcn/taxonomy"
-              className="font-medium"
-            >
-              Shadcn&apos;s Taxonomy project
-            </Link>
-            .
-          </p>
         </div>
       </section>
       {/*<section*/}

@@ -70,4 +70,5 @@ export type DashboardConfig = {
 
 export type ProjectConfig = {
   projectLinks: ProjectNavItem[];
+  mainNav: MainNavItem[];
 };

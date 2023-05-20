@@ -7,6 +7,20 @@ const newProjectURL = `${env.NEXT_PUBLIC_APP_URL}/projects/new`;
 const docsURL = `${env.NEXT_PUBLIC_APP_URL}/docs/projects`;
 
 export const projectConfig: ProjectConfig = {
+  mainNav: [
+    {
+      title: "Docs",
+      href: "/docs/projects",
+    },
+    {
+      title: "Old",
+      href: "/projects/old",
+    },
+    {
+      title: "New",
+      href: "/projects/new",
+    },
+  ],
   projectLinks: [
     {
       title: "Recipes",
