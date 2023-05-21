@@ -8,17 +8,26 @@ export default function LandingPage() {
             <div className="header-logo">Header Logo</div>
             <ul>
               <li>
-                <a className="header" href="#">
+                <a
+                  className="header"
+                  href="app/(projects)/projects/landing-page/old#"
+                >
                   header link one
                 </a>
               </li>
               <li>
-                <a className="header" href="#">
+                <a
+                  className="header"
+                  href="app/(projects)/projects/landing-page/old#"
+                >
                   header link two
                 </a>
               </li>
               <li>
-                <a className="header" href="#">
+                <a
+                  className="header"
+                  href="app/(projects)/projects/landing-page/old#"
+                >
                   header link three
                 </a>
               </li>
@@ -32,7 +41,10 @@ export default function LandingPage() {
                 title. It&apos;s a smaller font and the color is lower contrast
               </div>
               <div className="sign-up-button">
-                <a className="sign-up-text" href="#">
+                <a
+                  className="sign-up-text"
+                  href="app/(projects)/projects/landing-page/old#"
+                >
                   Sign up
                 </a>
               </div>
@@ -95,7 +107,10 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="sign-up-button white-border">
-            <a className="sign-up-text" href="#">
+            <a
+              className="sign-up-text"
+              href="app/(projects)/projects/landing-page/old#"
+            >
               Sign up
             </a>
           </div>

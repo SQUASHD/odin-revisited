@@ -105,8 +105,15 @@ export default function RecipePage({ params }: Params) {
                       className="ml-3 min-w-0 flex-1"
                     >
                       {ingredient.unit === "to taste"
-                        ? `${ingredient.name} ${ingredient.unit}`
-                        : `${ingredient.quantity} ${ingredient.unit} ${ingredient.name}`}
+                        ? // Some crazy logic to make sure the unit is pluralized correctly
+                          `${ingredient.name} ${ingredient.unit}`
+                        : `${ingredient.quantity} ${
+                            ingredient.quantity > 1 &&
+                            ingredient.unit.length > 1 &&
+                            !ingredient.unit.endsWith("s")
+                              ? ingredient.unit + "s"
+                              : ingredient.unit
+                          } ${ingredient.name}`}
                     </label>
                   </ListedItem>
                 ))}

@@ -1,4 +1,4 @@
-import { ProjectNavItem, ProjectStatus } from "@/types";
+import { ProjectNavItem } from "@/types";
 import {
   Card,
   CardContent,
@@ -7,18 +7,17 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { Recipe } from "contentlayer/generated";
 import React from "react";
+import { projectConfig } from "@/config/projects";
 
 type Cards = {
-  type: "docs" | "new" | "old" | "in progress";
-  status: ProjectStatus;
   project: ProjectNavItem;
 };
-export const ProjectCard = ({ type, project }: Cards) => (
+
+export const ProjectCard = ({ project }: Cards) => (
   <Card>
     <CardHeader>
       <CardTitle>{project.title}</CardTitle>
@@ -27,50 +26,60 @@ export const ProjectCard = ({ type, project }: Cards) => (
       <p>{project.description}</p>
     </CardContent>
     <CardFooter>
-      <Button variant="link" className="w-full" size="sm">
-        {type === "old" && project.oldLink && (
-          <Link href={project.oldLink.href} className="flex items-center gap-1">
-            <Icons.link className="h-4 w-4" />
-            {project.oldLink.label}
+      <div className="grid w-full grid-cols-3 gap-2">
+        {project.links?.newHref && (
+          <Link
+            href={project.links.newHref}
+            className="flex h-9 w-full items-center justify-center gap-1 rounded-md bg-primary px-3 text-primary-foreground hover:bg-primary/90"
+          >
+            <Icons.sparkles className="h-4 w-4" />
           </Link>
         )}
-        {type === "new" && project.newLink && (
-          <Link href={project.newLink.href} className="flex items-center gap-1">
-            <Icons.link className="h-4 w-4" />
-            {project.newLink.label}
-          </Link>
-        )}
-        {type === "docs" && project.docs && (
-          <Link href={project.docs.href} className="flex items-center gap-1">
+        {project.links?.docsHref && (
+          <Link
+            href={project.links.docsHref}
+            className="flex h-9 w-full items-center justify-center gap-1 rounded-md bg-primary px-3 text-primary-foreground hover:bg-primary/90"
+          >
             <Icons.book className="h-4 w-4" />
-            {project.docs.label}
           </Link>
         )}
-      </Button>
+        {project.links?.oldHref && (
+          <Link
+            href={project.links.oldHref}
+            className="flex h-9 w-full items-center justify-center gap-1 rounded-md bg-primary px-3 text-primary-foreground hover:bg-primary/90"
+          >
+            <Icons.archive className="h-4 w-4" />
+          </Link>
+        )}
+      </div>
     </CardFooter>
   </Card>
 );
 
-export const RecipeCard = ({ recipe }: { recipe: Recipe }) => (
-  <Card key={recipe.id} className="group relative h-full w-full bg-muted">
-    <Link
-      href={`/projects/new/recipes/${recipe.slugAsParams}`}
-      aria-label="Go to recipe"
-      className="inset absolute inset-0 z-10"
-    />
-    <CardHeader>
-      <CardTitle>{recipe.name}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <div className="mb-2 flex h-32 w-full items-center justify-center overflow-hidden rounded-lg">
-        <img
-          src={recipe.thumbnail}
-          alt={recipe.name}
-          className="object-cover object-center group-hover:opacity-80"
-        />
-      </div>
+export const RecipeCard = ({ recipe }: { recipe: Recipe }) => {
+  const recipeLinks = projectConfig.projectLinks[0];
 
-      <CardDescription>{recipe.description}</CardDescription>
-    </CardContent>
-  </Card>
-);
+  return (
+    <Card key={recipe.id} className="group relative h-full w-full bg-muted">
+      <Link
+        href={`${recipeLinks.links?.newHref}/${recipe.slugAsParams}`}
+        aria-label="Go to recipe"
+        className="inset absolute inset-0 z-10"
+      />
+      <CardHeader>
+        <CardTitle>{recipe.name}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <div className="mb-2 flex h-32 w-full items-center justify-center overflow-hidden rounded-lg">
+          <img
+            src={recipe.thumbnail}
+            alt={recipe.name}
+            className="object-cover object-center group-hover:opacity-80"
+          />
+        </div>
+
+        <CardDescription>{recipe.description}</CardDescription>
+      </CardContent>
+    </Card>
+  );
+};

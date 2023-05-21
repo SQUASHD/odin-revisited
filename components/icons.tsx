@@ -25,6 +25,8 @@ import {
   Clock,
   BookOpen,
   Link,
+  Archive,
+  Sparkles,
   type Icon as LucideIcon,
 } from "lucide-react";
 import { GitHub, SiteLogo } from "@/assets/icons";
@@ -60,4 +62,6 @@ export const Icons = {
   home: Home,
   clock: Clock,
   link: Link,
+  archive: Archive,
+  sparkles: Sparkles,
 };

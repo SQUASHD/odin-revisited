@@ -4,24 +4,14 @@ export type NavItem = {
   disabled?: boolean;
 };
 
-type LiveLink = {
-  href: string;
-  label: "See live";
-};
-
-export type ProjectStatus = "DONE" | "WIP" | "TODO";
-
 export type ProjectNavItem = {
   title: string;
   description: string;
-  status: ProjectStatus;
-  newLink?: LiveLink;
-  oldLink?: LiveLink;
-  docs?: {
-    href: string;
-    label: "Read more";
+  links?: {
+    oldHref?: string;
+    newHref?: string;
+    docsHref?: string;
   };
-  disabled?: boolean;
 };
 
 export type MainNavItem = NavItem;

@@ -2,6 +2,7 @@ import { projectConfig } from "@/config/projects";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ProjectCard } from "@/components/cards";
+import { Icons } from "@/components/icons";
 
 export default function ProjectsPage() {
   return (
@@ -12,27 +13,25 @@ export default function ProjectsPage() {
             Project overview
           </h1>
           <p className="max-w-3xl py-4 leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            Links to the docs for the various projects. I try to be as
-            comprehensive as possible, but if you have any questions, feel free
-            to reach out to me.
+            Links to the old and new versions as well as docs for the various
+            projects. I try to be as comprehensive as possible, but if you have
+            any questions, feel free to reach out to me.
           </p>
           <div className="flex gap-2">
-            <Button>
-              <Link href={"/projects/old"}>Old Projects</Link>
-            </Button>
-            <Button>
-              <Link href={"/projects/new"}>New Projects</Link>
-            </Button>
+            <div className="flex cursor-default items-center gap-1 rounded-lg bg-primary px-4 py-2 text-primary-foreground">
+              <Icons.sparkles /> New Version
+            </div>
+            <div className="flex cursor-default items-center gap-1 rounded-lg bg-primary px-4 py-2 text-primary-foreground">
+              <Icons.book /> Docs
+            </div>
+            <div className="flex cursor-default items-center gap-1 rounded-lg bg-primary px-4 py-2 text-primary-foreground">
+              <Icons.archive /> Old Version
+            </div>
           </div>
         </div>
         <div className="md: grid grid-cols-1 gap-8 px-4 sm:grid-cols-2 lg:grid-cols-4">
           {projectConfig.projectLinks.map((project, index) => (
-            <ProjectCard
-              key={index}
-              status={project.status}
-              type="docs"
-              project={project}
-            />
+            <ProjectCard key={index} project={project} />
           ))}
         </div>
       </div>
