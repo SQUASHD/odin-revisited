@@ -35,7 +35,7 @@ const ScissorsIcon = (props: SVGProps) => (
 );
 
 const ChoiceButton = ({ icon, label }: PlayerChoice) => (
-  <button className="flex aspect-square w-36 flex-col items-center justify-center gap-1 rounded-lg bg-muted hover:bg-muted/70">
+  <button className="flex aspect-square w-36 flex-col items-center justify-center gap-1 rounded-lg bg-primary text-primary-foreground hover:bg-primary/80">
     {cloneElement(icon, {
       className: "h-16 aspect-square",
     })}
