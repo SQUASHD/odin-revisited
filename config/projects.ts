@@ -1,9 +1,8 @@
 import { ProjectConfig } from "@/types";
-import { env } from "@/env.mjs";
 
 const projectsURL = `/projects`;
 
-const docsURL = `/docs/projects`;
+const docsURL = `/docs`;
 
 export const projectConfig: ProjectConfig = {
   mainNav: [
@@ -27,7 +26,7 @@ export const projectConfig: ProjectConfig = {
       links: {
         oldHref: projectsURL + "/recipes/old",
         newHref: projectsURL + "/recipes/new",
-        docsHref: docsURL + "/recipes",
+        docsHref: docsURL + "/foundations/recipes",
       },
     },
     {
@@ -36,7 +35,7 @@ export const projectConfig: ProjectConfig = {
       links: {
         oldHref: projectsURL + "/landing-page/old",
         newHref: "/",
-        docsHref: docsURL + "/landing-page",
+        docsHref: docsURL + "/foundations/landing-page",
       },
     },
     {
@@ -44,7 +43,7 @@ export const projectConfig: ProjectConfig = {
       description: "The classic game of rock paper scissors.",
       links: {
         oldHref: projectsURL + "/rock-paper-scissors/old",
-        docsHref: docsURL + "/rock-paper-scissors",
+        docsHref: docsURL + "/foundations/rock-paper-scissors",
       },
     },
     {
