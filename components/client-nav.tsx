@@ -48,23 +48,23 @@ export default function DynamicBreadCrumb({
   });
 
   return (
-    <ul
+    <nav
       className={cn("flex flex-wrap items-center gap-1 uppercase", className)}
     >
-      <li>
+      <div>
         <Link href={"/"}>
           <Icons.home className="h-4" />
           <span className="sr-only">Home</span>
         </Link>
-      </li>
+      </div>
       <span>/</span>
-      <li>
+      <div>
         <Link href={rootHref}>
           <span>{rootName}</span>
         </Link>
-      </li>
+      </div>
       {segments.map((segment, index) => (
-        <li key={index} className="before:mx-1 before:content-['/']">
+        <div key={index} className="before:mx-1 before:content-['/']">
           {index < segments.length - 1 ? (
             <Link href={`${compoundedSegments[index]}`} className="">
               {decodeURI(segment).replace("-", " ")}
@@ -72,9 +72,9 @@ export default function DynamicBreadCrumb({
           ) : (
             <span>{decodeURI(segment).replace("-", " ")}</span>
           )}
-        </li>
+        </div>
       ))}
-    </ul>
+    </nav>
   );
 }
 
